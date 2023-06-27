@@ -27,9 +27,13 @@ async function searchNotionImpl(
       }
 
       // convert non-2xx HTTP responses into errors
-      const error: any = new Error(res.statusText)
-      error.response = res
-      return Promise.reject(error)
+      if (!res.ok) {
+        const error: any = new Error(
+          `HTTP error: ${res.status} - ${res.statusText}`
+        )
+        error.response = res
+        return Promise.reject(error)
+      }
     })
     .then((res) => res.json())
 
