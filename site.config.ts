@@ -1,4 +1,4 @@
-import { siteConfig } from './lib/site-config'
+import { siteConfig } from '@/components/Notion/lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
@@ -12,7 +12,7 @@ export default siteConfig({
   // basic site info (required)
   name: 'Next.js Notion Starter Kit',
   domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  author: 'plfil',
 
   // open graph metadata (optional)
   description: 'Example Next.js Notion Starter Kit Site',

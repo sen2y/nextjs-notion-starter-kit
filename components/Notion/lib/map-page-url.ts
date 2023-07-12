@@ -9,16 +9,30 @@ import { Site } from './types'
 // (they're nice for debugging and speed up local dev)
 const uuid = !!includeNotionIdInUrls
 
+// export const mapPageUrl =
+//   (site: Site, recordMap: ExtendedRecordMap, searchParams: URLSearchParams) =>
+//   (pageId = '') => {
+//     const pageUuid = parsePageId(pageId, { uuid: true })
+
+//     if (uuidToId(pageUuid) === site.rootNotionPageId) {
+//       return createUrl('/', searchParams)
+//     } else {
+//       return createUrl(
+//         `/${getCanonicalPageId(pageUuid, recordMap, { uuid })}`,
+//         searchParams
+//       )
+//     }
+//   }
 export const mapPageUrl =
   (site: Site, recordMap: ExtendedRecordMap, searchParams: URLSearchParams) =>
   (pageId = '') => {
     const pageUuid = parsePageId(pageId, { uuid: true })
 
     if (uuidToId(pageUuid) === site.rootNotionPageId) {
-      return createUrl('/', searchParams)
+      return createUrl('/plfilwiki/notion', searchParams)
     } else {
       return createUrl(
-        `/${getCanonicalPageId(pageUuid, recordMap, { uuid })}`,
+        `/plfilwiki/${pageId}`, // 경로에 '/plfilwiki'와 페이지 ID를 추가합니다
         searchParams
       )
     }

@@ -6,8 +6,12 @@ import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import cs from 'classnames'
 import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
 
-import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
-import { useDarkMode } from '@/lib/use-dark-mode'
+import {
+  isSearchEnabled,
+  navigationLinks,
+  navigationStyle
+} from '@/components/Notion/lib/config'
+import { useDarkMode } from '@/components/Notion/lib/use-dark-mode'
 
 import styles from './styles.module.css'
 
